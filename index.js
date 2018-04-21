@@ -21,16 +21,12 @@ function repos (context) {
 
   const output = repoAddedIds.map(async (value) => {
     const result = await context.github.repos.getById({id: value})
-    return Promise.all([result]).then(function (val) {
-      val.forEach(outputData => {
-        repoInfo = {
-          repo: outputData.data.name,
-          owner: outputData.data.owner.login
-        }
-        final.push(repoInfo)
-      })
-      return final
-    })
+    repoInfo = {
+      repo: result.data.name,
+      owner: result.data.owner.login
+    }
+    final.push(repoInfo)
+    return final
   })
   return Promise.all(output).then(val => {
     return val[0]

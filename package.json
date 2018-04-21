@@ -1,6 +1,6 @@
 {
   "name": "probot-repos",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Probot extension for events that don't exist",
   "main": "index.js",
   "scripts": {
