@@ -1,5 +1,5 @@
 # probot-repos
-Probot extension for events that don't exist
+Probot extension for events that return **undefined**
 
 # What's its importance ?
 
@@ -14,7 +14,7 @@ Some github events like `installation` & `installation_repositories` does not wo
 
 ```js
 const repos = require('probot-repos')
-robot.on('installation', context => {
+robot.on('installation.created', context => {
     repos(context).then((val) => {
       // val will return array of repositories added .
       [ { repo: 'Awesome-Hacking', owner: 'USERNAME' },
@@ -22,4 +22,4 @@ robot.on('installation', context => {
     })
 })
 ```
-Enjoy coding
+Enjoy coding :peace_symbol:
